@@ -62,7 +62,7 @@ public class Main {
             System.out.print("Total: $");System.out.printf("%.2f", total);
         }
         else {
-            System.out.println("Total:" + subTotal);
+            System.out.println("Total: $"); System.out.printf("%.2f", subTotal);
         }
     }
 
