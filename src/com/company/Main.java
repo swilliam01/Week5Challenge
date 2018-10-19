@@ -46,27 +46,24 @@ public class Main {
                     "\t\t\t\t" + list2.isItemTaxable());
             subTotal = subTotal + list2.cost();
 
-           if (list2.isItemTaxable() == true) {
+            if (list2.isItemTaxable() == true) {
                 salesTax = salesTax + (list2.cost() * (tax / 100));
+                total = subTotal + salesTax;
             }
         }
-            System.out.println("\n");
-            System.out.print("\nSubtotal: $");System.out.printf("%.2f", subTotal);
-            System.out.print("\nTax Rate = ");System.out.printf("%.2f", tax);
-            System.out.print("%");
-            System.out.print("\nSales Tax: "); System.out.print("$"); System.out.printf("%.2f",salesTax);
         System.out.println("\n");
-         System.out.println("--------------------------------------------------------------------------------");
-         for (Item list3 : list) {
-             if (list3.isItemTaxable() == true) {
-                 total = subTotal + salesTax;
-                 System.out.print("Total: $");System.out.printf("%.2f", total);
-             }
-             else if (list3.isItemTaxable() != true) {
-                 System.out.print("Total: $"); System.out.printf("%.2f",subTotal);
-             }
-         }
-
+        System.out.print("\nSubtotal: $");System.out.printf("%.2f", subTotal);
+        System.out.print("\nTax Rate = ");System.out.printf("%.2f", tax);
+        System.out.print("%");
+        System.out.print("\nSales Tax: "); System.out.print("$"); System.out.printf("%.2f",salesTax);
+        System.out.println("\n");
+        System.out.println("--------------------------------------------------------------------------------");
+        if (total > 0){
+            System.out.print("Total: $");System.out.printf("%.2f", total);
+        }
+        else {
+            System.out.println("Total:" + subTotal);
+        }
     }
 
 }
